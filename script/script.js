@@ -118,14 +118,54 @@ customElements.define("app-bar", AppBar);
 class NoteForm extends HTMLElement {
   connectedCallback() {
     this.innerHTML = `
-            <form id="noteForm">
-                <input type="text" id="noteTitle" placeholder="Judul Catatan" required>
-                <textarea id="noteBody" placeholder="Isi Catatan" required></textarea>
-                <button type="submit">Tambah Catatan</button>
-            </form>
-        `;
+      <form id="noteForm">
+        <input type="text" id="noteTitle" placeholder="Judul Catatan" required>
+        <span class="error" id="titleError"></span>
+        <textarea id="noteBody" placeholder="Isi Catatan" required></textarea>
+        <span class="error" id="bodyError"></span>
+        <button type="submit" id="submitBtn" disabled>Tambah Catatan</button>
+      </form>
+    `;
 
     this.querySelector("#noteForm").addEventListener("submit", this.addNote);
+    this.querySelector("#noteTitle").addEventListener(
+      "input",
+      this.validateInput
+    );
+    this.querySelector("#noteBody").addEventListener(
+      "input",
+      this.validateInput
+    );
+  }
+
+  validateInput() {
+    const title = document.getElementById("noteTitle");
+    const body = document.getElementById("noteBody");
+    const titleError = document.getElementById("titleError");
+    const bodyError = document.getElementById("bodyError");
+    const submitBtn = document.getElementById("submitBtn");
+
+    let isValid = true;
+
+    if (title.value.length < 3) {
+      titleError.textContent = "Judul minimal 3 karakter";
+      title.style.borderColor = "red";
+      isValid = false;
+    } else {
+      titleError.textContent = "";
+      title.style.borderColor = "green";
+    }
+
+    if (body.value.length < 5) {
+      bodyError.textContent = "Isi catatan minimal 5 karakter";
+      body.style.borderColor = "red";
+      isValid = false;
+    } else {
+      bodyError.textContent = "";
+      body.style.borderColor = "green";
+    }
+
+    submitBtn.disabled = !isValid;
   }
 
   addNote(event) {
@@ -133,7 +173,7 @@ class NoteForm extends HTMLElement {
     const title = document.getElementById("noteTitle").value;
     const body = document.getElementById("noteBody").value;
 
-    if (title && body) {
+    if (title.length >= 3 && body.length >= 5) {
       const newNote = {
         id: `notes-${Date.now()}`,
         title,
@@ -144,10 +184,12 @@ class NoteForm extends HTMLElement {
       notesData.push(newNote);
       document.getElementById("noteTitle").value = "";
       document.getElementById("noteBody").value = "";
+      document.getElementById("submitBtn").disabled = true;
       renderNotes();
     }
   }
 }
+
 customElements.define("note-form", NoteForm);
 
 // 🔹 Web Component untuk Menampilkan Catatan
