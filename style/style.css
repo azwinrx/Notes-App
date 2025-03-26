@@ -10,7 +10,7 @@ app-bar {
   background-color: #8f87f1;
   color: white;
   text-align: center;
-  padding: 15px;
+  padding: 1px;
   font-size: 1.5rem;
 }
 
@@ -63,7 +63,7 @@ button {
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #e9a5f1;
 }
 
 /* 🔹 GRID LAYOUT UNTUK NOTES */

@@ -121,7 +121,7 @@ class NoteForm extends HTMLElement {
       <form id="noteForm">
         <input type="text" id="noteTitle" placeholder="Judul Catatan" required>
         <span class="error" id="titleError"></span>
-        <textarea id="noteBody" placeholder="Isi Catatan" required></textarea>
+        <textarea id="noteBody" placeholder="Catatan" required></textarea>
         <span class="error" id="bodyError"></span>
         <button type="submit" id="submitBtn" disabled>Tambah Catatan</button>
       </form>
@@ -147,8 +147,8 @@ class NoteForm extends HTMLElement {
 
     let isValid = true;
 
-    if (title.value.length < 3) {
-      titleError.textContent = "Judul minimal 3 karakter";
+    if (title.value.length < 1) {
+      titleError.textContent = "Tolong isi Judul Catatan";
       title.style.borderColor = "red";
       isValid = false;
     } else {
@@ -156,8 +156,8 @@ class NoteForm extends HTMLElement {
       title.style.borderColor = "green";
     }
 
-    if (body.value.length < 5) {
-      bodyError.textContent = "Isi catatan minimal 5 karakter";
+    if (body.value.length < 1) {
+      bodyError.textContent = "Tolong isi Catatan";
       body.style.borderColor = "red";
       isValid = false;
     } else {
