@@ -1,0 +1,102 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f5eedc;
+}
+
+app-bar {
+  display: block;
+  background-color: #8f87f1;
+  color: white;
+  text-align: center;
+  padding: 15px;
+  font-size: 1.5rem;
+}
+
+main {
+  padding: 20px;
+  max-width: 600px;
+  margin: auto;
+}
+
+/* 🔹 FORM STYLING */
+note-form {
+  display: block;
+  background: #c68efd;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+input[type="text"],
+textarea {
+  width: 100%; /* Pastikan input tidak melewati batas box */
+  max-width: 100%; /* Hindari input melebihi parent */
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  box-sizing: border-box; /* Pastikan padding tidak menambah ukuran */
+}
+
+textarea {
+  min-height: 100px;
+  resize: none; /* Mencegah textarea ditarik */
+}
+
+button {
+  background-color: #8f87f1;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* 🔹 GRID LAYOUT UNTUK NOTES */
+#notes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.note-card {
+  background-color: #e9a5f1;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.note-card h3 {
+  margin: 0 0 10px;
+  color: #8f87f1;
+}
+
+.note-card p {
+  margin: 0;
+  color: #555;
+  word-wrap: break-word; /* Memastikan kata panjang terpotong */
+  overflow-wrap: break-word; /* Alternatif untuk browser lain */
+  white-space: pre-wrap; /* Memastikan teks mengikuti format aslinya */
+  max-width: 100%; /* Membatasi lebar teks */
+}
+
+.note-card .date {
+  font-size: 0.8rem;
+  color: gray;
+  margin-top: 10px;
+}
