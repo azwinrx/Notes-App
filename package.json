@@ -1,0 +1,33 @@
+{
+  "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "babel-loader": "^9.2.1",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.11.0",
+    "html-webpack-plugin": "^5.6.3",
+    "style-loader": "^3.3.4",
+    "webpack": "^5.99.5",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^4.15.2"
+  },
+  "scripts": {
+    "start-dev": "webpack serve --mode development",
+    "build": "webpack --mode production",
+    "watch": "webpack --watch --mode development",
+    "format": "prettier --write .",
+    "format-check": "prettier --check ."
+  },
+  "dependencies": {
+    "animejs": "^4.0.0",
+    "milestone-4-notesapp": "file:",
+    "sweetalert2": "^11.6.13"
+  },
+  "name": "milestone-4-notesapp",
+  "version": "1.0.0",
+  "main": "webpack.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "hal yg harus dilakukan di projek ini\r 1. Instalasi Dependensi yang Diperlukan\r    npm init -y\r    npm install --save-dev webpack webpack-cli webpack-dev-server html-webpack-plugin css-loader style-loader @babel/core @babel/preset-env babel-loader clean-webpack-plugin"
+}
