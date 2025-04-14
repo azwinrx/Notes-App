@@ -6,7 +6,7 @@ module.exports = (env, argv) => {
   const isProduction = argv.mode === 'production';
 
   return {
-    entry: './src/js/script.js', //untuk entry point
+    entry: './src/js/index.js', //untuk entry point
     output: {
       filename: 'bundle.js',
       path: path.resolve(__dirname, 'dist'),

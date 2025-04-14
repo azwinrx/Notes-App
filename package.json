@@ -5,18 +5,21 @@
     "babel-loader": "^9.2.1",
     "clean-webpack-plugin": "^4.0.0",
     "css-loader": "^6.11.0",
+    "gh-pages": "^6.3.0",
     "html-webpack-plugin": "^5.6.3",
     "style-loader": "^3.3.4",
     "webpack": "^5.99.5",
     "webpack-cli": "^5.1.4",
     "webpack-dev-server": "^4.15.2"
   },
+  "homepage": "https://github.com/azwinrx/Notes-App",
   "scripts": {
     "start-dev": "webpack serve --mode development",
     "build": "webpack --mode production",
     "watch": "webpack --watch --mode development",
     "format": "prettier --write .",
-    "format-check": "prettier --check ."
+    "format-check": "prettier --check .",
+    "deploy": "gh-pages -d dist"
   },
   "dependencies": {
     "animejs": "^4.0.0",

@@ -21,7 +21,6 @@ main {
   margin: auto;
 }
 
-/* 🔹 FORM STYLING */
 note-form {
   display: block;
   background: #c68efd;
@@ -39,18 +38,18 @@ form {
 
 input[type='text'],
 textarea {
-  width: 100%; /* Pastikan input tidak melewati batas box */
-  max-width: 100%; /* Hindari input melebihi parent */
+  width: 100%;
+  max-width: 100%;
   padding: 12px;
   border: 1px solid #ccc;
   border-radius: 5px;
   font-size: 1rem;
-  box-sizing: border-box; /* Pastikan padding tidak menambah ukuran */
+  box-sizing: border-box;
 }
 
 textarea {
   min-height: 100px;
-  resize: none; /* Mencegah textarea ditarik */
+  resize: none;
 }
 
 button {
@@ -67,7 +66,6 @@ button:hover {
   background-color: #766cee;
 }
 
-/* 🔹 GRID LAYOUT UNTUK NOTES */
 #notes-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -90,10 +88,10 @@ button:hover {
 .note-card p {
   margin: 0;
   color: #555;
-  word-wrap: break-word; /* Memastikan kata panjang terpotong */
-  overflow-wrap: break-word; /* Alternatif untuk browser lain */
-  white-space: pre-wrap; /* Memastikan teks mengikuti format aslinya */
-  max-width: 100%; /* Membatasi lebar teks */
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+  max-width: 100%;
 }
 
 .note-card .date {
@@ -102,9 +100,13 @@ button:hover {
   margin-top: 10px;
 }
 
-#loading {
+#loading-indicator {
   text-align: center;
   font-weight: bold;
   margin: 1rem;
   color: #555;
+}
+
+.hidden {
+  display: none;
 }
